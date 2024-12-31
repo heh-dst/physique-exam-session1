@@ -1,5 +1,7 @@
-# qcm-template
-Auto-Multiple-Choice project template.
+# Examen de physique
+[![CI](https://github.com/heh-dst/physique-exam-session1/actions/workflows/make.yml/badge.svg)](https://github.com/heh-dst/physique-exam-session1/actions/workflows/make.yml)
+
+Projet Auto-Multiple-Choice.
 
 ## Prerequisites:
 - Docker
