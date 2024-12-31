@@ -154,3 +154,105 @@
 		\end{multicols}
 	\end{question}
 }
+
+\element{q03}{
+	\begin{question}{q03.1}
+		Quelles sont les composantes \(x\) et \(y\) du vecteur \(\vec{u}\) si sa norme vaut \qty{2}{\meter}~?
+		\begin{center}
+			\begin{tikzpicture}
+				\draw[->] (0,0) -- (7,0) node[right] {\(x\)};
+				\draw[->] (0,0) -- (0,4) node[above] {\(y\)};
+				\draw[very thick,-Stealth] (2,1) coordinate(B) -- +(40:3) coordinate(A);
+				\node[above right] at (A) {\(\vec{u}\)};
+				\draw[help lines,dashed] (B) -- ++(0,2) coordinate(C);
+				\pic["\ang{50}",draw,angle eccentricity=2] {angle};
+			\end{tikzpicture}
+		\end{center}
+		\begin{multicols}{3}\AMCBoxedAnswers{}
+			\begin{choices}
+				\wrongchoice{\(\begin{pmatrix}\qty{0.77}{\meter} \\ \qty{0.64}{\meter}\end{pmatrix}\)}
+				\wrongchoice{\(\begin{pmatrix}\qty{1.29}{\meter} \\ \qty{1.53}{\meter}\end{pmatrix}\)}
+				\correctchoice{\(\begin{pmatrix}\qty{1.53}{\meter} \\ \qty{1.29}{\meter}\end{pmatrix}\)}
+				\wrongchoice{\(\begin{pmatrix}\qty{2}{\meter} \\ \qty{1.5}{\meter}\end{pmatrix}\)}
+				\lastchoices{}\columnbreak{}
+				\wrongchoice{aucune}
+				\wrongchoice{toutes}
+				\wrongchoice{manque}
+				\wrongchoice{absurdité}
+			\end{choices}
+		\end{multicols}
+	\end{question}
+}
+
+\element{q03}{
+	\begin{question}{q03.2}
+		Quelles sont les composantes \(x\) et \(y\) du vecteur \(\vec{u}\) si sa norme vaut \qty{2}{\meter}~?
+		\begin{center}
+			\begin{tikzpicture}
+				\draw[->] (0,0) -- (7,0) node[right] {\(x\)};
+				\draw[->] (0,0) -- (0,4) node[above] {\(y\)};
+				\draw[very thick,-Stealth] (2,1) coordinate(B) -- +(30:3) coordinate(A);
+				\node[above right] at (A) {\(\vec{u}\)};
+				\draw[help lines,dashed] (B) -- ++(0,2) coordinate(C);
+				\pic["\ang{60}",draw,angle eccentricity=2] {angle};
+			\end{tikzpicture}
+		\end{center}
+		\begin{multicols}{3}\AMCBoxedAnswers{}
+			\begin{choices}
+				\wrongchoice{\(\begin{pmatrix}\qty{0.87}{\meter} \\ \qty{0.5}{\meter}\end{pmatrix}\)}
+				\wrongchoice{\(\begin{pmatrix}\qty{1}{\meter} \\ \qty{1.73}{\meter}\end{pmatrix}\)}
+				\correctchoice{\(\begin{pmatrix}\qty{1.73}{\meter} \\ \qty{1}{\meter}\end{pmatrix}\)}
+				\wrongchoice{\(\begin{pmatrix}\qty{2}{\meter} \\ \qty{1}{\meter}\end{pmatrix}\)}
+				\lastchoices{}\columnbreak{}
+				\wrongchoice{aucune}
+				\wrongchoice{toutes}
+				\wrongchoice{manque}
+				\wrongchoice{absurdité}
+			\end{choices}
+		\end{multicols}
+	\end{question}
+}
+
+\element{q04}{
+	\begin{question}{q04.1}
+		Soit les vecteurs \(\vec{A}\) et \(\vec{B}\) situés dans le plan \(xy\).
+		La norme de \(\vec{A}\) vaut \qty{3.2}{\meter} et l'angle \(\theta_A = \ang{45}\).
+		La norme de \(\vec{B}\) vaut \qty{2.4}{\meter} et l'angle \(\theta_B = \ang{290}\).
+		Que vaut \(A \cdot B\)~?
+		\begin{multicols}{2}\AMCBoxedAnswers{}
+			\begin{choices}
+				\wrongchoice{\qty{-6.96}{\meter}}
+				\correctchoice{\qty{-3.25}{\meter}}
+				\wrongchoice{\qty{2.62}{\meter}}
+				\wrongchoice{\qty{5.43}{\meter}}
+				\lastchoices{}\columnbreak{}
+				\wrongchoice{aucune}
+				\wrongchoice{toutes}
+				\wrongchoice{manque}
+				\wrongchoice{absurdité}
+			\end{choices}
+		\end{multicols}
+	\end{question}
+}
+
+\element{q04}{
+	\begin{question}{q04.2}
+		Soit les vecteurs \(\vec{A}\) et \(\vec{B}\) situés dans le plan \(xy\).
+		La norme de \(\vec{A}\) vaut \qty{3.2}{\meter} et l'angle \(\theta_A = \ang{60}\).
+		La norme de \(\vec{B}\) vaut \qty{2.4}{\meter} et l'angle \(\theta_B = \ang{290}\).
+		Que vaut \(A \cdot B\)~?
+		\begin{multicols}{2}\AMCBoxedAnswers{}
+			\begin{choices}
+				\correctchoice{\qty{-30.25}{\meter}}
+				\wrongchoice{\qty{-10.51}{\meter}}
+				\wrongchoice{\qty{19.75}{\meter}}
+				\wrongchoice{\qty{26.60}{\meter}}
+				\lastchoices{}\columnbreak{}
+				\wrongchoice{aucune}
+				\wrongchoice{toutes}
+				\wrongchoice{manque}
+				\wrongchoice{absurdité}
+			\end{choices}
+		\end{multicols}
+	\end{question}
+}
