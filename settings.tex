@@ -1,9 +1,9 @@
 % !TeX root = questionnaire.tex
-\usepackage{amsmath,booktabs,enumitem,fontspec,graphicx,multicol,polyglossia,setspace,siunitx,titling,tikz}
+\usepackage{amsmath,booktabs,enumitem,fontspec,graphicx,multicol,pgfplots,polyglossia,setspace,siunitx,titling,tikz}
 
-\date{2024-12-31} % chktex 8
+\date{2025-01-15} % chktex 8
 \title{Examen}
-\newcommand{\thesubtitle}{UE -- section} % chktex 8
+\newcommand{\thesubtitle}{Physique appliquée -- bachelier en informatique} % chktex 8
 \author{François ROLAND}
 
 \usepackage[sfdefault]{roboto}
@@ -20,7 +20,7 @@
 
 \usepackage{csquotes}
 
-\usepackage[asbox,automarks,box,lang=FR,noshuffle,noshufflegroups,separateanswersheet]{automultiplechoice}
+\usepackage[asbox,automarks,box,catalog,lang=FR,separateanswersheet]{automultiplechoice}
 \AMCboxStyle{size=2ex,down=.3ex}
 \AMCrandomseed{1}
 \AMCsetFoot{\thepage{}}
@@ -33,6 +33,10 @@
 	pdfauthor={\theauthor},
 	pdflang={fr-BE},
 	hidelinks}
+
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{intersections}
+\usepackage[RPvoltages,straightvoltages]{circuitikz}
 
 \onehalfspacing{}
 \setlength{\parindent}{0pt}
