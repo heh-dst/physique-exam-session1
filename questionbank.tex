@@ -156,24 +156,37 @@
 }
 
 \element{q03}{
+	\directlua{
+		u_norm = 2
+		u_angle = 40
+		u_angle_rad = math.rad(u_angle)
+		u_x = round(u_norm * math.cos(u_angle_rad), 2)
+		u_y = round(u_norm * math.sin(u_angle_rad), 2)
+		f1_x = u_y
+		f1_y = u_x
+		f2_x = round(math.cos(u_angle_rad), 2)
+		f2_y = round(math.sin(u_angle_rad), 2)
+    f3_x = u_norm
+    f3_y = round(u_norm * math.sin(u_angle_rad), 2)
+	}
 	\begin{question}{q03.1}
-		Quelles sont les composantes \(x\) et \(y\) du vecteur \(\vec{u}\) si sa norme vaut \qty{2}{\meter}~?
+		Quelles sont les composantes \(x\) et \(y\) du vecteur \(\vec{u}\) si sa norme vaut \qty{\directlua{tex.print(u_norm)}}{\meter}~?
 		\begin{center}
 			\begin{tikzpicture}
-				\draw[->] (0,0) -- (7,0) node[right] {\(x\)};
-				\draw[->] (0,0) -- (0,4) node[above] {\(y\)};
-				\draw[very thick,-Stealth] (2,1) coordinate(B) -- +(40:3) coordinate(A);
+				\draw[->] (0,0) -- (\directlua{tex.print(u_x + 4)},0) node[right] {\(x\)};
+				\draw[->] (0,0) -- (0,\directlua{tex.print(u_y + 2)}) node[above] {\(y\)};
+				\draw[very thick,-Stealth] (2,1) coordinate(B) -- +(\directlua{tex.print(u_angle)}:\directlua{tex.print(u_norm)}) coordinate(A);
 				\node[above right] at (A) {\(\vec{u}\)};
-				\draw[help lines,dashed] (B) -- ++(0,2) coordinate(C);
-				\pic["\ang{50}",draw,angle eccentricity=2] {angle};
+				\draw[help lines,dashed] (B) -- ++(0,\directlua{tex.print(u_y)}) coordinate(C);
+				\pic["\ang{\directlua{tex.print(90 - u_angle)}}",draw,angle eccentricity=2] {angle};
 			\end{tikzpicture}
 		\end{center}
 		\begin{multicols}{3}\AMCBoxedAnswers{}
 			\begin{choices}
-				\wrongchoice{\(\begin{pmatrix}\qty{0.77}{\meter} \\ \qty{0.64}{\meter}\end{pmatrix}\)}
-				\wrongchoice{\(\begin{pmatrix}\qty{1.29}{\meter} \\ \qty{1.53}{\meter}\end{pmatrix}\)}
-				\correctchoice{\(\begin{pmatrix}\qty{1.53}{\meter} \\ \qty{1.29}{\meter}\end{pmatrix}\)}
-				\wrongchoice{\(\begin{pmatrix}\qty{2}{\meter} \\ \qty{1.5}{\meter}\end{pmatrix}\)}
+				\correctchoice{\(\begin{pmatrix}\qty{\directlua{tex.print(u_x)}}{\meter} \\ \qty{\directlua{tex.print(u_y)}}{\meter}\end{pmatrix}\)}
+				\wrongchoice{\(\begin{pmatrix}\qty{\directlua{tex.print(f1_x)}}{\meter} \\ \qty{\directlua{tex.print(f1_y)}}{\meter}\end{pmatrix}\)}
+				\wrongchoice{\(\begin{pmatrix}\qty{\directlua{tex.print(f2_x)}}{\meter} \\ \qty{\directlua{tex.print(f2_y)}}{\meter}\end{pmatrix}\)}
+				\wrongchoice{\(\begin{pmatrix}\qty{\directlua{tex.print(f3_x)}}{\meter} \\ \qty{\directlua{tex.print(f3_y)}}{\meter}\end{pmatrix}\)}
 				\lastchoices{}\columnbreak{}
 				\wrongchoice{aucune}
 				\wrongchoice{toutes}
