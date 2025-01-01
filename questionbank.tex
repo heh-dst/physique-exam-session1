@@ -156,21 +156,21 @@
 }
 
 \element{q03}{
-	\directlua{
-		u_norm = 2
-		u_angle = 40
-		u_angle_rad = math.rad(u_angle)
-		u_x = round(u_norm * math.cos(u_angle_rad), 2)
-		u_y = round(u_norm * math.sin(u_angle_rad), 2)
-		f1_x = u_y
-		f1_y = u_x
-		f2_x = round(math.cos(u_angle_rad), 2)
-		f2_y = round(math.sin(u_angle_rad), 2)
-    f3_x = u_norm
-    f3_y = round(u_norm * math.sin(u_angle_rad), 2)
-	}
 	\begin{question}{q03.1}
 		Quelles sont les composantes \(x\) et \(y\) du vecteur \(\vec{u}\) si sa norme vaut \qty{\directlua{tex.print(u_norm)}}{\meter}~?
+		\directlua{
+			u_norm = 2
+			u_angle = 40
+			u_angle_rad = math.rad(u_angle)
+			u_x = round(u_norm * math.cos(u_angle_rad), 2)
+			u_y = round(u_norm * math.sin(u_angle_rad), 2)
+			f1_x = u_y
+			f1_y = u_x
+			f2_x = round(math.cos(u_angle_rad), 2)
+			f2_y = round(math.sin(u_angle_rad), 2)
+			f3_x = u_norm
+			f3_y = round(u_norm * math.sin(u_angle_rad), 2)
+		}
 		\begin{center}
 			\begin{tikzpicture}
 				\draw[->] (0,0) -- (\directlua{tex.print(u_x + 4)},0) node[right] {\(x\)};
