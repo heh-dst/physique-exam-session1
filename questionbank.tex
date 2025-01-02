@@ -195,38 +195,27 @@
 
 \element{q04}{
 	\begin{question}{q04.1}
+		\directlua{
+			A_norm = math.random(11, 60) / 10
+			A_angle = 45 + math.random(1, 8) * 5
+			B_norm = math.random(11, 60) / 10
+			B_angle = 180 + math.random(1, 8) * 5
+			CP_angle = B_angle - A_angle
+			CP = round(A_norm * B_norm * math.cos(math.rad(CP_angle)), 2)
+			f1 = round(A_norm * B_norm * math.cos(math.rad(B_angle)), 2)
+			f2 = round(A_norm * B_norm * math.cos(math.rad(A_angle + B_angle)), 2)
+			f3 = round(A_norm * B_norm * math.sin(math.rad(A_angle)), 2)
+		}
 		Soit les vecteurs \(\vec{A}\) et \(\vec{B}\) situés dans le plan \(xy\).
-		La norme de \(\vec{A}\) vaut \qty{3.2}{\meter} et l'angle \(\theta_A = \ang{45}\).
-		La norme de \(\vec{B}\) vaut \qty{2.4}{\meter} et l'angle \(\theta_B = \ang{290}\).
+		La norme de \(\vec{A}\) vaut \qty{\directlua{tex.print(A_norm)}}{\meter} et l'angle \(\theta_A = \ang{\directlua{tex.print(A_angle)}}\).
+		La norme de \(\vec{B}\) vaut \qty{\directlua{tex.print(B_norm)}}{\meter} et l'angle \(\theta_B = \ang{\directlua{tex.print(B_angle)}}\).
 		Que vaut \(A \cdot B\)~?
 		\begin{multicols}{2}\AMCBoxedAnswers{}
 			\begin{choices}
-				\wrongchoice{\qty{-6.96}{\meter}}
-				\correctchoice{\qty{-3.25}{\meter}}
-				\wrongchoice{\qty{2.62}{\meter}}
-				\wrongchoice{\qty{5.43}{\meter}}
-				\lastchoices{}\columnbreak{}
-				\wrongchoice{aucune}
-				\wrongchoice{toutes}
-				\wrongchoice{manque}
-				\wrongchoice{absurdité}
-			\end{choices}
-		\end{multicols}
-	\end{question}
-}
-
-\element{q04}{
-	\begin{question}{q04.2}
-		Soit les vecteurs \(\vec{A}\) et \(\vec{B}\) situés dans le plan \(xy\).
-		La norme de \(\vec{A}\) vaut \qty{3.2}{\meter} et l'angle \(\theta_A = \ang{60}\).
-		La norme de \(\vec{B}\) vaut \qty{2.4}{\meter} et l'angle \(\theta_B = \ang{290}\).
-		Que vaut \(A \cdot B\)~?
-		\begin{multicols}{2}\AMCBoxedAnswers{}
-			\begin{choices}
-				\correctchoice{\qty{-30.25}{\meter}}
-				\wrongchoice{\qty{-10.51}{\meter}}
-				\wrongchoice{\qty{19.75}{\meter}}
-				\wrongchoice{\qty{26.60}{\meter}}
+				\correctchoice{\qty{\directlua{tex.print(CP)}}{\meter}}
+				\wrongchoice{\qty{\directlua{tex.print(f1)}}{\meter}}
+				\wrongchoice{\qty{\directlua{tex.print(f2)}}{\meter}}
+				\wrongchoice{\qty{\directlua{tex.print(f3)}}{\meter}}
 				\lastchoices{}\columnbreak{}
 				\wrongchoice{aucune}
 				\wrongchoice{toutes}
