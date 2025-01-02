@@ -204,7 +204,7 @@
 			CP = round(A_norm * B_norm * math.cos(math.rad(CP_angle)), 2)
 			f1 = round(A_norm * B_norm * math.cos(math.rad(B_angle)), 2)
 			f2 = round(A_norm * B_norm * math.cos(math.rad(A_angle + B_angle)), 2)
-			f3 = round(A_norm * B_norm * math.sin(math.rad(A_angle)), 2)
+			f3 = round(A_norm * B_norm * math.sin(math.rad(CP_angle)), 2)
 		}
 		Soit les vecteurs \(\vec{A}\) et \(\vec{B}\) situés dans le plan \(xy\).
 		La norme de \(\vec{A}\) vaut \qty{\directlua{tex.print(A_norm)}}{\meter} et l'angle \(\theta_A = \ang{\directlua{tex.print(A_angle)}}\).
