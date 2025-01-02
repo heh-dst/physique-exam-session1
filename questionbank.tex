@@ -157,27 +157,23 @@
 
 \element{q03}{
 	\begin{question}{q03.1}
-		Quelles sont les composantes \(x\) et \(y\) du vecteur \(\vec{u}\) si sa norme vaut \qty{\directlua{tex.print(u_norm)}}{\meter}~?
 		\directlua{
-			u_norm = 2
-			u_angle = 40
+			u_norm = math.random(1, 4) * 5
+			u_angle = 10 + math.random(0, 6) * 5
 			u_angle_rad = math.rad(u_angle)
-			u_x = round(u_norm * math.cos(u_angle_rad), 2)
-			u_y = round(u_norm * math.sin(u_angle_rad), 2)
-			f1_x = u_y
-			f1_y = u_x
-			f2_x = round(math.cos(u_angle_rad), 2)
-			f2_y = round(math.sin(u_angle_rad), 2)
-			f3_x = u_norm
-			f3_y = round(u_norm * math.sin(u_angle_rad), 2)
+			u_x, u_y = to_coords(u_norm, u_angle, 2)
+			f1_x, f1_y = to_coords(u_norm, 90 - u_angle, 2)
+			f2_x, f2_y = to_coords(u_norm / 2, u_angle, 2)
+			f3_x, f3_y = to_coords(u_norm, u_angle - 90, 2)
 		}
+		Quelles sont les composantes \(x\) et \(y\) du vecteur \(\vec{u}\) si sa norme vaut \qty{\directlua{tex.print(u_norm)}}{\meter}~?
 		\begin{center}
 			\begin{tikzpicture}
-				\draw[->] (0,0) -- (\directlua{tex.print(u_x + 4)},0) node[right] {\(x\)};
-				\draw[->] (0,0) -- (0,\directlua{tex.print(u_y + 2)}) node[above] {\(y\)};
-				\draw[very thick,-Stealth] (2,1) coordinate(B) -- +(\directlua{tex.print(u_angle)}:\directlua{tex.print(u_norm)}) coordinate(A);
+				\draw[->] (0,0) -- (6,0) node[right] {\(x\)};
+				\draw[->] (0,0) -- (0,3) node[above] {\(y\)};
+				\draw[very thick,-Stealth] (2,1) coordinate(B) -- +(\directlua{tex.print(u_angle)}:2) coordinate(A);
 				\node[above right] at (A) {\(\vec{u}\)};
-				\draw[help lines,dashed] (B) -- ++(0,\directlua{tex.print(u_y)}) coordinate(C);
+				\draw[dashed,thick] (B) -- ++(0,1.5) coordinate(C);
 				\pic["\ang{\directlua{tex.print(90 - u_angle)}}",draw,angle eccentricity=2] {angle};
 			\end{tikzpicture}
 		\end{center}
@@ -187,35 +183,6 @@
 				\wrongchoice{\(\begin{pmatrix}\qty{\directlua{tex.print(f1_x)}}{\meter} \\ \qty{\directlua{tex.print(f1_y)}}{\meter}\end{pmatrix}\)}
 				\wrongchoice{\(\begin{pmatrix}\qty{\directlua{tex.print(f2_x)}}{\meter} \\ \qty{\directlua{tex.print(f2_y)}}{\meter}\end{pmatrix}\)}
 				\wrongchoice{\(\begin{pmatrix}\qty{\directlua{tex.print(f3_x)}}{\meter} \\ \qty{\directlua{tex.print(f3_y)}}{\meter}\end{pmatrix}\)}
-				\lastchoices{}\columnbreak{}
-				\wrongchoice{aucune}
-				\wrongchoice{toutes}
-				\wrongchoice{manque}
-				\wrongchoice{absurdité}
-			\end{choices}
-		\end{multicols}
-	\end{question}
-}
-
-\element{q03}{
-	\begin{question}{q03.2}
-		Quelles sont les composantes \(x\) et \(y\) du vecteur \(\vec{u}\) si sa norme vaut \qty{2}{\meter}~?
-		\begin{center}
-			\begin{tikzpicture}
-				\draw[->] (0,0) -- (7,0) node[right] {\(x\)};
-				\draw[->] (0,0) -- (0,4) node[above] {\(y\)};
-				\draw[very thick,-Stealth] (2,1) coordinate(B) -- +(30:3) coordinate(A);
-				\node[above right] at (A) {\(\vec{u}\)};
-				\draw[help lines,dashed] (B) -- ++(0,2) coordinate(C);
-				\pic["\ang{60}",draw,angle eccentricity=2] {angle};
-			\end{tikzpicture}
-		\end{center}
-		\begin{multicols}{3}\AMCBoxedAnswers{}
-			\begin{choices}
-				\wrongchoice{\(\begin{pmatrix}\qty{0.87}{\meter} \\ \qty{0.5}{\meter}\end{pmatrix}\)}
-				\wrongchoice{\(\begin{pmatrix}\qty{1}{\meter} \\ \qty{1.73}{\meter}\end{pmatrix}\)}
-				\correctchoice{\(\begin{pmatrix}\qty{1.73}{\meter} \\ \qty{1}{\meter}\end{pmatrix}\)}
-				\wrongchoice{\(\begin{pmatrix}\qty{2}{\meter} \\ \qty{1}{\meter}\end{pmatrix}\)}
 				\lastchoices{}\columnbreak{}
 				\wrongchoice{aucune}
 				\wrongchoice{toutes}

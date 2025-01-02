@@ -53,4 +53,9 @@
 	local factor = 10 ^ (decimals or 3)
 	return math.floor(number * factor + 0.5) / factor
 	end
+
+	function to_coords(norm, angle_deg, decimals)
+	local angle_rad = math.rad(angle_deg)
+	return round(norm * math.cos(angle_rad), decimals), round(norm * math.sin(angle_rad), decimals)
+	end
 }
